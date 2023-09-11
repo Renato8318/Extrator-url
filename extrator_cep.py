@@ -3,9 +3,9 @@ endereco= "Rua da Flores 72, apartamento 1002, Laranjeiras, Rio de Janeiro, RJ, 
 
 import re  # Regular Expression -- RegEx
 
-# 5 digitos + hifen (opcional) + digitos
+# 5 digitos + hifen (opcional) + 3 digitos
 
-padrao = re.compile("[0123456789][0123456789][0123456789][0123456789][0123456789][-]?[0123456789][0123456789][0123456789]")
+padrao = re.compile("[0-9]{5}[-]{0,1}[0-9]{3}")
 busca = padrao.search(endereco)  #Match
 if busca:
     cep = busca.group()
